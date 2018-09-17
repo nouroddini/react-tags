@@ -337,7 +337,8 @@ var ReactTags = function (_Component) {
           inputName = this.props.name,
           inputId = this.props.id,
           maxLength = this.props.maxLength,
-          tabIndex = this.props.tabIndex;
+          tabIndex = this.props.tabIndex,
+          autoComplete= this.props.autoComplete;
 
       var tagInput = !this.props.readOnly ? _react2.default.createElement(
         "div",
@@ -357,6 +358,7 @@ var ReactTags = function (_Component) {
           name: inputName,
           id: inputId,
           tabIndex: tabIndex,
+          autoComplete: autoComplete,
           maxLength: maxLength,
           value: this.props.inputValue
         }),
@@ -396,6 +398,7 @@ ReactTags.propTypes = {
   delimiters: _propTypes2.default.array,
   autofocus: _propTypes2.default.bool,
   tabIndex:  _propTypes2.default.number,
+  autoComplete: _propTypes2.default.string,
   inline: _propTypes2.default.bool,
   handleDelete: _propTypes2.default.func.isRequired,
   handleAddition: _propTypes2.default.func.isRequired,
@@ -426,6 +429,7 @@ ReactTags.defaultProps = {
   allowDeleteFromEmptyInput: true,
   minQueryLength: 2,
   autocomplete: false,
+  autoComplete: "on",
   readOnly: false,
   tabIndex: 0
 };
